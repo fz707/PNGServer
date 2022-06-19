@@ -1,0 +1,272 @@
+==3256754== Memcheck, a memory error detector
+==3256754== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3256754== Using Valgrind-3.15.0-608cb11914-20190413 and LibVEX; rerun with -h for copyright info
+==3256754== Command: ./paster -t 10 -n 2
+==3256754== Parent PID: 2640273
+==3256754== 
+--3256754-- 
+--3256754-- Valgrind options:
+--3256754--    --leak-check=full
+--3256754--    --show-leak-kinds=all
+--3256754--    --track-origins=yes
+--3256754--    --verbose
+--3256754--    --log-file=valgrind-out.txt
+--3256754-- Contents of /proc/version:
+--3256754--   Linux version 5.13.0-44-generic (buildd@lcy02-amd64-107) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #49~20.04.1-Ubuntu SMP Wed May 18 18:44:28 UTC 2022
+--3256754-- 
+--3256754-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-bmi-f16c-rdrand
+--3256754-- Page sizes: currently 4096, max supported 4096
+--3256754-- Valgrind library directory: /usr/lib/x86_64-linux-gnu/valgrind
+--3256754-- Reading syms from /home/f8zaman/ece252lab1/G_201_3/lab2/paster
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/ld-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/memcheck-amd64-linux
+--3256754--    object doesn't have a symbol table
+--3256754--    object doesn't have a dynamic symbol table
+--3256754-- Scheduler: using generic scheduler lock implementation.
+--3256754-- Reading suppressions file: /usr/lib/x86_64-linux-gnu/valgrind/default.supp
+==3256754== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-3256754-by-f8zaman-on-eceubuntu1
+==3256754== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-3256754-by-f8zaman-on-eceubuntu1
+==3256754== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-3256754-by-f8zaman-on-eceubuntu1
+==3256754== 
+==3256754== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==3256754== don't want to do, unless you know exactly what you're doing,
+==3256754== or are doing some strange experiment):
+==3256754==   /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=3256754 ...command...
+==3256754== 
+==3256754== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==3256754==   /path/to/gdb ./paster
+==3256754== and then give GDB the following command
+==3256754==   target remote | /usr/lib/x86_64-linux-gnu/valgrind/../../bin/vgdb --pid=3256754
+==3256754== --pid is optional if only one valgrind process is running
+==3256754== 
+--3256754-- REDIR: 0x4022e20 (ld-linux-x86-64.so.2:strlen) redirected to 0x580c9ce2 (???)
+--3256754-- REDIR: 0x4022bf0 (ld-linux-x86-64.so.2:index) redirected to 0x580c9cfc (???)
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_core-amd64-linux.so
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so
+--3256754--    object doesn't have a symbol table
+==3256754== WARNING: new redirection conflicts with existing -- ignoring it
+--3256754--     old: 0x04022e20 (strlen              ) R-> (0000.0) 0x580c9ce2 ???
+--3256754--     new: 0x04022e20 (strlen              ) R-> (2007.0) 0x0483f060 strlen
+--3256754-- REDIR: 0x401f600 (ld-linux-x86-64.so.2:strcmp) redirected to 0x483ffd0 (strcmp)
+--3256754-- REDIR: 0x4023380 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4843a20 (mempcpy)
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libcurl.so.4.6.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libz.so.1.2.11
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libm-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/fe/91b4090ea04c1559ff71dd9290062776618891.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/7b/4536f41cdaa5888408e82d0836e33dcf436466.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libc-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libnghttp2.so.14.19.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libidn2.so.0.3.6
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/librtmp.so.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libssh.so.4.8.4
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libpsl.so.5.3.2
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2.2
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2.10.12
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2.10.12
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libbrotlidec.so.1.0.7
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libunistring.so.2.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libgnutls.so.30.27.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libhogweed.so.5.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libnettle.so.7.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libgmp.so.10.4.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/c0/f40155b3f8bf8c494fa800f9ab197ebe20ed6e.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.3.3
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libk5crypto.so.3.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libcom_err.so.2.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5support.so.0.1
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libresolv-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/45/19041bde5b859c55798ac0745b0b6199cb7d94.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libsasl2.so.2.0.25
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libgssapi.so.3.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1.0.7
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libp11-kit.so.0.3.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libtasn1.so.6.6.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libkeyutils.so.1.8
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimntlm.so.0.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libkrb5.so.26.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libasn1.so.8.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libhcrypto.so.4.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libroken.so.18.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libffi.so.7.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libwind.so.0.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libheimbase.so.1.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libhx509.so.5.0.0
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libcrypt.so.1.1.0
+--3256754--    object doesn't have a symbol table
+--3256754-- REDIR: 0x4b31480 (libc.so.6:memmove) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30780 (libc.so.6:strncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b317b0 (libc.so.6:strcasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b300a0 (libc.so.6:strcat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b307e0 (libc.so.6:rindex) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b32c50 (libc.so.6:rawmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4dce0 (libc.so.6:wmemchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4d820 (libc.so.6:wcscmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b315e0 (libc.so.6:mempcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31410 (libc.so.6:bcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30710 (libc.so.6:strncmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30150 (libc.so.6:strcmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31540 (libc.so.6:memset) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4d7e0 (libc.so.6:wcschr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30670 (libc.so.6:strnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30230 (libc.so.6:strcspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31800 (libc.so.6:strncasecmp) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b301d0 (libc.so.6:strcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4ef50 (libc.so.6:wcsnlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4d860 (libc.so.6:wcscpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30820 (libc.so.6:strpbrk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30100 (libc.so.6:index) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30630 (libc.so.6:strlen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b39bb0 (libc.so.6:memrchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31850 (libc.so.6:strcasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b313d0 (libc.so.6:memchr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b4d930 (libc.so.6:wcslen) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b30ae0 (libc.so.6:strspn) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b31750 (libc.so.6:stpncpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b316f0 (libc.so.6:stpcpy) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b32c90 (libc.so.6:strchrnul) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b318a0 (libc.so.6:strncasecmp_l) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4bbe850 (libc.so.6:__memcpy_chk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4b312f0 (libc.so.6:strstr) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+--3256754-- REDIR: 0x4bbe910 (libc.so.6:__memmove_chk) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+==3256754== WARNING: new redirection conflicts with existing -- ignoring it
+--3256754--     old: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--3256754--     new: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+--3256754-- REDIR: 0x4b306b0 (libc.so.6:strncat) redirected to 0x48311d0 (_vgnU_ifunc_wrapper)
+==3256754== WARNING: new redirection conflicts with existing -- ignoring it
+--3256754--     old: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--3256754--     new: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+==3256754== WARNING: new redirection conflicts with existing -- ignoring it
+--3256754--     old: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2030.0) 0x04843b10 __memcpy_chk
+--3256754--     new: 0x04c1c6d0 (__memcpy_chk_avx_una) R-> (2024.0) 0x048434d0 __memmove_chk
+--3256754-- REDIR: 0x4c19500 (libc.so.6:__strrchr_avx2) redirected to 0x483ea10 (rindex)
+--3256754-- REDIR: 0x4c196d0 (libc.so.6:__strlen_avx2) redirected to 0x483ef40 (strlen)
+--3256754-- REDIR: 0x4c15010 (libc.so.6:__strncmp_avx2) redirected to 0x483f670 (strncmp)
+--3256754-- REDIR: 0x4c190e0 (libc.so.6:__strchr_avx2) redirected to 0x483ebf0 (index)
+--3256754-- REDIR: 0x4c14bd0 (libc.so.6:__strcmp_avx2) redirected to 0x483fed0 (strcmp)
+--3256754-- REDIR: 0x4b2b0e0 (libc.so.6:malloc) redirected to 0x483b780 (malloc)
+--3256754-- REDIR: 0x4c1c6e0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x48429f0 (memmove)
+--3256754-- REDIR: 0x4b2cb10 (libc.so.6:calloc) redirected to 0x483dce0 (calloc)
+--3256754-- REDIR: 0x4c1c6d0 (libc.so.6:__memcpy_chk_avx_unaligned_erms) redirected to 0x4843b10 (__memcpy_chk)
+--3256754-- REDIR: 0x4b2b6d0 (libc.so.6:free) redirected to 0x483c9d0 (free)
+--3256754-- REDIR: 0x4c1cb60 (libc.so.6:__memset_avx2_unaligned_erms) redirected to 0x48428e0 (memset)
+--3256754-- REDIR: 0x4c1ac10 (libc.so.6:__strcpy_avx2) redirected to 0x483f090 (strcpy)
+--3256754-- REDIR: 0x4c160a0 (libc.so.6:__strcasecmp_avx) redirected to 0x483f830 (strcasecmp)
+--3256754-- REDIR: 0x4b2be80 (libc.so.6:realloc) redirected to 0x483df30 (realloc)
+--3256754-- REDIR: 0x4c1b900 (libc.so.6:__stpcpy_avx2) redirected to 0x4842300 (stpcpy)
+--3256754-- REDIR: 0x4c1c6c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4843660 (mempcpy)
+--3256754-- REDIR: 0x4b30fa0 (libc.so.6:__GI_strstr) redirected to 0x4843ca0 (__strstr_sse2)
+--3256754-- REDIR: 0x4c15530 (libc.so.6:__memchr_avx2) redirected to 0x4840050 (memchr)
+--3256754-- REDIR: 0x4c17720 (libc.so.6:__strncasecmp_avx) redirected to 0x483f910 (strncasecmp)
+--3256754-- REDIR: 0x4c19310 (libc.so.6:__strchrnul_avx2) redirected to 0x4843540 (strchrnul)
+--3256754-- REDIR: 0x4c14820 (libc.so.6:__strcspn_sse42) redirected to 0x4843e10 (strcspn)
+--3256754-- REDIR: 0x4c15800 (libc.so.6:__rawmemchr_avx2) redirected to 0x4843580 (rawmemchr)
+--3256754-- REDIR: 0x4c14960 (libc.so.6:__strpbrk_sse42) redirected to 0x4843da0 (strpbrk)
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libnss_files-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/45/da81f0ac3660e3c3cb947c6244151d879ed9e8.debug ..
+--3256754--   .. build-id is valid
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+--3256754--    object doesn't have a symbol table
+--3256754-- Reading syms from /lib/x86_64-linux-gnu/libnss_dns-2.31.so
+--3256754--   Considering /usr/lib/debug/.build-id/3f/ac4ec397ba8e8938fe298f103113f315465130.debug ..
+--3256754--   .. build-id is valid
+--3256754-- REDIR: 0x4c15cc0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x48421e0 (bcmp)
+==3256754== Warning: client switching stacks?  SP change: 0x1ffeb3a970 --> 0x1ffefff5e8
+==3256754==          to suppress, use: --max-stackframe=5000312 or greater
+--3256754-- Discarding syms at 0xe8bd5c0-0xe8c3a1c in /lib/x86_64-linux-gnu/libnss_files-2.31.so (have_dinfo 1)
+--3256754-- Discarding syms at 0xf8d13a0-0xf8d284a in /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2 (have_dinfo 1)
+--3256754-- Discarding syms at 0xf8d7320-0xf8da998 in /lib/x86_64-linux-gnu/libnss_dns-2.31.so (have_dinfo 1)
+==3256754== 
+==3256754== HEAP SUMMARY:
+==3256754==     in use at exit: 2,000,472 bytes in 251 blocks
+==3256754==   total heap usage: 27,427 allocs, 27,176 frees, 34,072,004 bytes allocated
+==3256754== 
+==3256754== Searching for pointers to 251 not-freed blocks
+==3256754== Checked 1,003,104 bytes
+==3256754== 
+==3256754== 472 bytes in 1 blocks are still reachable in loss record 1 of 4
+==3256754==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3256754==    by 0x4B1392D: __fopen_internal (iofopen.c:65)
+==3256754==    by 0x4B1392D: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==3256754==    by 0x10B245: catpng (paster.c:362)
+==3256754==    by 0x10A8D7: main (paster.c:259)
+==3256754== 
+==3256754== 8,000 bytes in 1 blocks are possibly lost in loss record 2 of 4
+==3256754==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3256754==    by 0x109F79: recv_buf_init (paster.c:92)
+==3256754==    by 0x10A19D: get_slices (paster.c:152)
+==3256754==    by 0x4A76608: start_thread (pthread_create.c:477)
+==3256754==    by 0x4BB0132: clone (clone.S:95)
+==3256754== 
+==3256754== 400,000 bytes in 50 blocks are definitely lost in loss record 3 of 4
+==3256754==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3256754==    by 0x109F79: recv_buf_init (paster.c:92)
+==3256754==    by 0x10A4B9: main (paster.c:200)
+==3256754== 
+==3256754== 1,592,000 bytes in 199 blocks are definitely lost in loss record 4 of 4
+==3256754==    at 0x483B7F3: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3256754==    by 0x109F79: recv_buf_init (paster.c:92)
+==3256754==    by 0x10A19D: get_slices (paster.c:152)
+==3256754==    by 0x4A76608: start_thread (pthread_create.c:477)
+==3256754==    by 0x4BB0132: clone (clone.S:95)
+==3256754== 
+==3256754== LEAK SUMMARY:
+==3256754==    definitely lost: 1,992,000 bytes in 249 blocks
+==3256754==    indirectly lost: 0 bytes in 0 blocks
+==3256754==      possibly lost: 8,000 bytes in 1 blocks
+==3256754==    still reachable: 472 bytes in 1 blocks
+==3256754==         suppressed: 0 bytes in 0 blocks
+==3256754== 
+==3256754== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
